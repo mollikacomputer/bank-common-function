@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Banking</title>
+</head>
+<body>
+    <h1>Test Banking html file</h1>
+    <!-- Deposit start amount-->
+    <div class="deposit">
+        <h2> Total Deposit</h2>
+        <div > $<span id="total-amount">0</span> </div>
+    </div>
+    <!-- deposit button input field start-->
+    <div>
+        <div>
+            <input id="deposit-input-box" type="number"><br><br>
+            <button id="deposit-button">Deposit</button>
+        </div>
+    </div>
+<script>
+    document.getElementById('deposit-button').addEventListener('click', function(){
+        const depositInputBox = document.getElementById('deposit-input-box');
+        const newDepositAmount = depositInputBox.value;
+        const beforeTotal = document.getElementById('total-amount');
+        let beforeTotalAmount = beforeTotal.innerText;
+        const currentTotalAmount = parseFloat(newDepositAmount) +parseFloat(beforeTotalAmount);
+       beforeTotal.innerText = currentTotalAmount;
+       depositInputBox.value = '';
+    })
+
+</script>
+    <script src="test-banking.js"></script>
+</body>
+</html>
