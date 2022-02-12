@@ -1,12 +1,12 @@
 
 
-function getInputValue(){
-  const depositInput = document.getElementById('deposit-input');
-  const depositInputText = depositInput.value;
-  const depositInputAmount = parseFloat(depositInputText);
+function getInputValue(inputId){
+  const inputField = document.getElementById(inputId);
+  const inputText = inputField.value;
+  const amountValue = parseFloat(inputText);
   // console.log(depositAmount);
-  depositInput.value = '';
-  return depositInputAmount;
+  inputField.value = '';
+  return amountValue;
 }
 
 document.getElementById('deposit-button').addEventListener('click', function(){
@@ -17,8 +17,9 @@ document.getElementById('deposit-button').addEventListener('click', function(){
   const depositInputAmount = parseFloat(depositInputText);
   // console.log(depositAmount);
  */
-  const depositInputAmount = getInputValue();
+  const depositInputAmount = getInputValue('deposit-input');
   // deposit amount 
+  
   const depositAmountField = document.getElementById('before-deposit-total');
   const depositAmountText = depositAmountField.innerText;
   const depositAmount = parseFloat(depositAmountText);
@@ -45,10 +46,12 @@ document.getElementById('deposit-button').addEventListener('click', function(){
 
 document.getElementById('withdraw-button').addEventListener('click', function(){
   // withdraw input field
+  const withdrawInputAmount = getInputValue('withdraw-input');
+  /* 
   const withdrawInputField = document.getElementById('withdraw-input');
   const withdrawInputFieldText = withdrawInputField.value;
   const withdrawInputAmount = parseFloat(withdrawInputFieldText);
-
+ */
   // withdraw field
   const withdrawField = document.getElementById('withdraw-field');
   const withdrawFieldText = withdrawField.innerText;
@@ -57,7 +60,7 @@ document.getElementById('withdraw-button').addEventListener('click', function(){
   const withdrawFieldUpdate = withdrawFieldAmount + withdrawInputAmount;
 
   withdrawField.innerText = withdrawFieldUpdate;
-  withdrawInputField.value = '';
+  // withdrawInputField.value = '';
 
   
   // deposit update account balance
