@@ -1,10 +1,23 @@
+
+
+function getInputValue(){
+  const depositInput = document.getElementById('deposit-input');
+  const depositInputText = depositInput.value;
+  const depositInputAmount = parseFloat(depositInputText);
+  // console.log(depositAmount);
+  depositInput.value = '';
+  return depositInputAmount;
+}
+
 document.getElementById('deposit-button').addEventListener('click', function(){
+/* 
   // deposit input field
   const depositInput = document.getElementById('deposit-input');
   const depositInputText = depositInput.value;
   const depositInputAmount = parseFloat(depositInputText);
   // console.log(depositAmount);
-
+ */
+  const depositInputAmount = getInputValue();
   // deposit amount 
   const depositAmountField = document.getElementById('before-deposit-total');
   const depositAmountText = depositAmountField.innerText;
@@ -23,11 +36,11 @@ document.getElementById('deposit-button').addEventListener('click', function(){
   balanceField.innerText = balanceUpdateField;
 
   // withdraw amount update and total
-  const withdrawField = 
+  
   
 
-  console.log(depositAmount);
-  depositInput.value = '';
+  // console.log(depositAmount);
+  // depositInput.value = '';
 })
 
 document.getElementById('withdraw-button').addEventListener('click', function(){
