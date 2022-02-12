@@ -8,6 +8,17 @@ function getInputValue(inputId){
   inputField.value = '';
   return amountValue;
 }
+function getUpdateField(depositInputAmount){
+  const depositAmountField = document.getElementById('before-deposit-total');
+  const depositAmountText = depositAmountField.innerText;
+  const depositAmount = parseFloat(depositAmountText);
+ 
+  // deposit Total Amount After Update
+  const depositTotalAmount = depositAmount + depositInputAmount;
+  depositAmountField.innerText = depositTotalAmount;
+
+  
+}
 
 document.getElementById('deposit-button').addEventListener('click', function(){
 /* 
@@ -19,15 +30,16 @@ document.getElementById('deposit-button').addEventListener('click', function(){
  */
   const depositInputAmount = getInputValue('deposit-input');
   // deposit amount 
-  
+  const depositAmount = getUpdateField(depositInputAmount);
+/* 
   const depositAmountField = document.getElementById('before-deposit-total');
   const depositAmountText = depositAmountField.innerText;
   const depositAmount = parseFloat(depositAmountText);
-
+ 
   // deposit Total Amount After Update
   const depositTotalAmount = depositAmount + depositInputAmount;
   depositAmountField.innerText = depositTotalAmount;
-
+*/
   // deposit update account balance
   const balanceField = document.getElementById('balance-field');
   const balanceFieldText = balanceField.innerText;
